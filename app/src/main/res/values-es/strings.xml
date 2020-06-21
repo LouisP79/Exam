@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Perú App Examen</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Contraseña</string>
+    <string name="login_button">Ingresar</string>
+    <string name="error_conection">No hay nungún tipo de conexión a internet, verifíca tu Wifi o Datos</string>
+    <string name="error_internet">Error de conexión con el servidor, por favor inténtelo de nuevo, si el problema persiste contacte a soporte</string>
+    <string name="error_login_email_valid">Ingrese su correo</string>
+    <string name="error_login_email_format">Ingrese un correo válido</string>
+    <string name="error_login_password_valid">Ingrese su Contraseña</string>
+    <string name="error_login_password_lenght">La contraseña es muy corta</string>
+    <string name="user">peruapps0@peruapps.com</string>
+    <string name="password">password0</string>
+    <string name="unknown_error">Error Desconocido</string>
+    <string name="user_error">Usuario Incorrecto</string>
+    <string name="error_bad_request">Bad Request</string>
+</resources>

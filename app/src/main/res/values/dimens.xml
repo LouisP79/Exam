@@ -1,0 +1,7 @@
+<resources>
+    <dimen name="login_default_margin_start_end">16dp</dimen>
+    <dimen name="login_default_margin_top">35dp</dimen>
+    <dimen name="circular_progress_button_default_initial_angle">50dp</dimen>
+    <dimen name="circular_progress_button_default_bar_padding">6dp</dimen>
+    <dimen name="circular_progress_button_default_bar_width">4dp</dimen>
+</resources>

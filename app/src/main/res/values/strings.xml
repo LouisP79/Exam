@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Perú App Examen</string>
+
+    <string name="user">peruapps0@peruapps.com</string>
+    <string name="password">password0</string>
+
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="login_button">Login</string>
+
+    <string name="error_conection">There is not any internet connection, check your Wifi or Mobile Net</string>
+    <string name="error_internet">Server connection Error, try again later, if problem persist call us</string>
+    <string name="error_login_email_valid">Enter you email</string>
+    <string name="error_login_email_format">Enter a valid email</string>
+    <string name="error_login_password_valid">Enter your password</string>
+    <string name="error_login_password_lenght">Password is too short</string>
+    <string name="error_bad_request">Bad Request</string>
+
+    <string name="user_error">Bad Credentials</string>
+
+    <string name="unknown_error">Unknown Error</string>
+</resources>

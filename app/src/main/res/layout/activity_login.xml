@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".ui.useCase.login.activity.LoginActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_user"
+        android:contentDescription="@string/app_name" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/login_default_margin_start_end"
+        android:layout_marginEnd="@dimen/login_default_margin_start_end"
+        android:layout_marginTop="@dimen/login_default_margin_top"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="@string/hint_email"
+            android:text="@string/user"
+            android:lines="1"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/login_default_margin_start_end"
+        android:layout_marginEnd="@dimen/login_default_margin_start_end"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_password"
+            android:text="@string/password"
+            android:inputType="textPassword"
+            android:lines="1"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/login_button"
+        android:textColor="@android:color/white"
+        android:transitionName="transition"
+        android:layout_marginTop="@dimen/login_default_margin_top"
+        android:layout_marginStart="@dimen/login_default_margin_start_end"
+        android:layout_marginEnd="@dimen/login_default_margin_start_end"
+        app:finalCornerAngle="@dimen/circular_progress_button_default_initial_angle"
+        app:initialCornerAngle="@dimen/circular_progress_button_default_initial_angle"
+        app:spinning_bar_color="@android:color/white"
+        app:spinning_bar_padding="@dimen/circular_progress_button_default_bar_padding"
+        app:spinning_bar_width="@dimen/circular_progress_button_default_bar_width"/>
+
+
+</LinearLayout>
