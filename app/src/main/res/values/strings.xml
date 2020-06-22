@@ -17,6 +17,7 @@
     <string name="error_bad_request">Bad Request</string>
 
     <string name="user_error">Bad Credentials</string>
+    <string name="bad_method_error">Bad Method</string>
 
     <string name="unknown_error">Unknown Error</string>
 </resources>

@@ -5,14 +5,10 @@ import android.util.Log
 import android.widget.Toast
 
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.NavInflater
-import androidx.navigation.fragment.NavHostFragment
 
 import com.perappexamen.R
 import com.perappexamen.preferences.ApplicationPreferences
 import com.perappexamen.util.core.UtilConnectionInterceptor
-import io.reactivex.disposables.CompositeDisposable
-import kotlinx.android.synthetic.main.content_main.*
 import org.koin.android.ext.android.inject
 import java.net.HttpURLConnection
 
@@ -20,29 +16,11 @@ abstract class BaseActivity : AppCompatActivity() {
 
     val applicationPreferences: ApplicationPreferences by inject()
 
-    lateinit var compositeDisposable: CompositeDisposable
-    private var navHostFragment: NavHostFragment? = null
-    var navInflater: NavInflater? = null
-
     protected abstract val layoutResourceId: Int
-    protected abstract fun addListeners()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(layoutResourceId)
-
-        nav_host_fragment?.let {
-            navHostFragment = nav_host_fragment as NavHostFragment
-            navInflater = navHostFragment?.navController?.navInflater
-        }
-
-        compositeDisposable = CompositeDisposable()
-        addListeners()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        compositeDisposable.dispose()
     }
 
     private fun showToast(message: String) {
@@ -57,6 +35,7 @@ abstract class BaseActivity : AppCompatActivity() {
         when(code){
             HttpURLConnection.HTTP_BAD_REQUEST -> showToast(R.string.user_error)
             HttpURLConnection.HTTP_UNAUTHORIZED -> showToast(R.string.user_error)
+            HttpURLConnection.HTTP_BAD_METHOD -> showToast(R.string.bad_method_error)
         }
     }
 

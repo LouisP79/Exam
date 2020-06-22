@@ -29,6 +29,11 @@ class ApplicationPreferences(context: Context) {
         get() = eSharedPreferences.getString(KEY_TOKEN, null)
         set(value) = eSharedPreferences.edit{putString(KEY_TOKEN, value)}
 
+    fun getBearerToken(): String?{
+        if(token == null) return null
+        return "Bearer $token"
+    }
+
     fun clearall() {
         token = null
     }

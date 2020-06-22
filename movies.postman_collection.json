@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "d884b441-1146-49a4-b31f-5fb8e2f9529a",
+		"name": "movies",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"peruapps0@peruapps.com\",\n    \"password\":\"password0\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api-movies.pappstest.com/api/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"api-movies",
+						"pappstest",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "movies",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTIyNTU5YjQwMzY1YTUyODdjMzA1M2UwMDBlN2QxYjI2NmIzMWQ4NzQwMjBhMDJiYzU3N2IzMTI1NmM2MTc2ZmNlMjVlZGU2YzA4NTliY2YiLCJpYXQiOjE1OTI1ODgxNzQsIm5iZiI6MTU5MjU4ODE3NCwiZXhwIjoxNjI0MTI0MTc0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.EDQo56_nCr_kSH9K8bts7MOupbeuPyuvbhAiQnYc8ewTSGLXdFWhGR1L62ki0J4gp_a9Q8q-VxlsPeA3ttcZvczLxUN56Suq1LDAgyclN3Q1xZdBCJRgXMjmvfhfhgY6A65L_G4AmchkX3213pNUelbex7FbxL5eAt3DL4Mse1f3YHWXF5rtvCOUHhX3kOFh-EApy52ttumYGXE_TLmV8Jf6CkUUhoWyFUVOvmk2K4M57L_VkLoiv6-h4ImqdIwyoT_rKnPKFSK_SFvInMpve2uowLwdU_Pc4SFCrFctfSjIxZKrrr0otywS6BGjeP-Gzj9T-l_y7IWi2uRBavz-iNoxIzSWrga1h0_Z8YnOJJx_gaHV4kOxi5qTnxS4PKiUd6XwRw2gTdwUSBrKfbpFUNXfAJMM2J5g66aGBqFKZ0hQ4HmoB1-Je6NwTMCdvX52Hzv4RZ9mtMP3F-AcRAdRZze4z4U9ayKvWe4uFxvI2yRajdWAjwIk4B1adoNwxS8JWVVmehp6LraAcHMBna0TVEXhRCKe_MmJDLiYqldxkpJZjoU8D5KFNKg4nw6aj2I2V_0_tnYQOBLs5_G_iezXfKV_z-2qQufftTQNHzl10qsl4mIpQl05I0zMpo2ITq62wIQxX-x4M-Pv9lyFaVCYpKYSi6refLfhy3BxMD645tQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"peruapps0@peruapps.com\",\n    \"password\":\"password0\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api-movies.pappstest.com/api/v1/movies",
+					"protocol": "http",
+					"host": [
+						"api-movies",
+						"pappstest",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"movies"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

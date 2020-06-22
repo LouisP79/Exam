@@ -1,12 +1,13 @@
 package com.perappexamen.ui.useCase.login.activity
 
 import android.content.Intent
+import android.os.Bundle
 import androidx.lifecycle.Observer
 import com.perappexamen.R
 import com.perappexamen.data.token.request.TokenRequest
 import com.perappexamen.ui.base.activity.BaseActivity
 import com.perappexamen.ui.useCase.login.viewModel.LoginViewModel
-import com.perappexamen.ui.useCase.main.MainActivity
+import com.perappexamen.ui.useCase.main.activity.MainActivity
 import com.perappexamen.util.extension.validateEmail
 import com.perappexamen.util.extension.validateEmpty
 import com.perappexamen.util.extension.validateLength
@@ -20,30 +21,35 @@ class LoginActivity : BaseActivity() {
 
     private val viewModel: LoginViewModel by viewModel()
 
-    override fun addListeners() {
-        login.setOnClickListener {
-            if(validate()){
-                login.startAnimation()
-                viewModel.getToken(TokenRequest(email.text.toString(), pass.text.toString()))
-                    .observe(this,
-                        Observer { response ->
-                            when(response){
-                                null -> unknownError(null)
-                                else ->{
-                                    if(response.dataResponse != null){
-                                        if(response.dataResponse.isSuccessful){
-                                            applicationPreferences.token = response.dataResponse.body()!!.data.token
-                                            login.stopAnimation()
-                                            startActivity(Intent(this, MainActivity::class.java))
-                                            finish()
-                                        }else errorCode(response.dataResponse.code())
-                                    }else errorConnection(response.throwable!!)
-                                }
-                            }
-                            login.revertAnimation()
-                        })
-            }
-        }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        addListeners()
+    }
+
+    private fun addListeners() {
+        login.setOnClickListener {if(validate()) login()}
+    }
+
+    private fun login(){
+        login.startAnimation()
+        viewModel.getToken(TokenRequest(email.text.toString(), pass.text.toString()))
+            .observe(this,
+                Observer { response ->
+                    when(response){
+                        null -> unknownError(null)
+                        else ->{
+                            if(response.dataResponse != null){
+                                if(response.dataResponse.isSuccessful){
+                                    applicationPreferences.token = response.dataResponse.body()!!.data.token
+                                    login.stopAnimation()
+                                    startActivity(Intent(this, MainActivity::class.java))
+                                    finish()
+                                }else errorCode(response.dataResponse.code())
+                            }else errorConnection(response.throwable!!)
+                        }
+                    }
+                    login.revertAnimation()
+                })
     }
 
     private fun validate(): Boolean{

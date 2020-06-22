@@ -15,4 +15,5 @@
     <string name="unknown_error">Error Desconocido</string>
     <string name="user_error">Usuario Incorrecto</string>
     <string name="error_bad_request">Bad Request</string>
+    <string name="bad_method_error">Método Incorrecto</string>
 </resources>
