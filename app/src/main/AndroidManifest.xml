@@ -27,6 +27,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.perappexamen.ui.useCase.login.activity.LoginActivity"/>
+        <activity android:name="com.perappexamen.ui.useCase.movieDetail.activity.MovieDetailActivity"/>
     </application>
 
 </manifest>

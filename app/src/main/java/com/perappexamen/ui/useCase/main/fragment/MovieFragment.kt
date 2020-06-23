@@ -1,9 +1,9 @@
 package com.perappexamen.ui.useCase.main.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.perappexamen.R
@@ -12,6 +12,8 @@ import com.perappexamen.data.pageableObject.Pageable
 import com.perappexamen.ui.base.fragment.BaseFragment
 import com.perappexamen.ui.useCase.main.activity.MainActivity
 import com.perappexamen.ui.useCase.main.adapter.MovieAdapter
+import com.perappexamen.ui.useCase.movieDetail.activity.MovieDetailActivity
+import com.perappexamen.ui.useCase.movieDetail.activity.MovieDetailActivity.Companion.MOVIE
 import com.perappexamen.util.listener.EndlessRecyclerViewScrollListener
 import kotlinx.android.synthetic.main.fragment_movies.*
 
@@ -27,15 +29,15 @@ class MovieFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setHasOptionsMenu(true)
         setup()
     }
 
     private fun setup(){
         adapter =  MovieAdapter()
         adapter.setOnDetailClickListener {
-            (activity as MainActivity).viewModel.movieDetailModel = it
-            findNavController().navigate(R.id.action_movieFragment_to_movieDetailFragment)
+            val intent = Intent(context, MovieDetailActivity::class.java)
+            intent.putExtra(MOVIE, it)
+            startActivity(intent)
         }
 
         val layoutManager = GridLayoutManager(context, 3)
