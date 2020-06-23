@@ -3,6 +3,10 @@
     <dimen name="login_default_margin_top">35dp</dimen>
     <dimen name="movie_title_default_margin_bottom">8dp</dimen>
     <dimen name="movie_default_padding">10dp</dimen>
+    <dimen name="movie_img_height">350dp</dimen>
+    <dimen name="movie_img_margin_top">30dp</dimen>
+    <dimen name="movie_title_text_size">28sp</dimen>
+    <dimen name="movie_default_margin_start_end">14dp</dimen>
     <dimen name="circular_progress_button_default_initial_angle">50dp</dimen>
     <dimen name="circular_progress_button_default_bar_padding">6dp</dimen>
     <dimen name="circular_progress_button_default_bar_width">4dp</dimen>

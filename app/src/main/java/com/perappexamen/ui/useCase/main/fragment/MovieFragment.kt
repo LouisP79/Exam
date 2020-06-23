@@ -3,6 +3,7 @@ package com.perappexamen.ui.useCase.main.fragment
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.perappexamen.R
@@ -32,6 +33,10 @@ class MovieFragment : BaseFragment() {
 
     private fun setup(){
         adapter =  MovieAdapter()
+        adapter.setOnDetailClickListener {
+            (activity as MainActivity).viewModel.movieDetailModel = it
+            findNavController().navigate(R.id.action_movieFragment_to_movieDetailFragment)
+        }
 
         val layoutManager = GridLayoutManager(context, 3)
         layoutManager.orientation = LinearLayoutManager.VERTICAL

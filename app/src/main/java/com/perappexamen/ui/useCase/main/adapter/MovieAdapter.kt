@@ -40,7 +40,7 @@ class MovieAdapter: RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
         }
     }
 
-    fun setOnShareClickListener(listener: (detail: MovieDetailModel)->Unit){
+    fun setOnDetailClickListener(listener: (detail: MovieDetailModel)->Unit){
         this.listener = listener
     }
 
